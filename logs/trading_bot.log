@@ -1,0 +1,105 @@
+2026-04-23 21:26:59,349 | ERROR | root | cli_place_order_failed
+Traceback (most recent call last):
+  File "D:\Primetrade.ai\trading_bot\cli.py", line 27, in place_order
+    manager = OrderManager()
+  File "D:\Primetrade.ai\trading_bot\bot\orders.py", line 12, in __init__
+    self.client = client or BinanceFuturesClient()
+                            ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Primetrade.ai\trading_bot\bot\client.py", line 39, in __init__
+    raise ValueError(
+        "Missing Binance API credentials. Set BINANCE_API_KEY and BINANCE_API_SECRET in your environment or .env file."
+    )
+ValueError: Missing Binance API credentials. Set BINANCE_API_KEY and BINANCE_API_SECRET in your environment or .env file.
+2026-04-23 21:39:18,682 | INFO | bot.orders | validated_order_request={'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': Decimal('0.001'), 'price': None}
+('120000')}
+2026-04-23 21:39:18,696 | INFO | bot.client | binance_request method=POST url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.001', 'recvWindow': 10000, 'timestamp': 1776960558695, 'price': '120000', 'timeInForce': 'GTC', 'signature': '***masked***'}
+2026-04-23 21:39:19,688 | INFO | bot.client | binance_response status=200 body={'orderId': 13066096781, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'G76GRY8F8fwS3hS0TX9Rz1', 'price': '120000.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1776960563334}
+2026-04-23 21:40:38,866 | INFO | bot.orders | validated_order_request={'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'LIMIT', 'quantity': Decimal('0.001'), 'price': Decimal('120000')}
+2026-04-23 21:40:38,866 | INFO | bot.client | binance_request method=POST url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.001', 'recvWindow': 10000, 'timestamp': 1776960638866, 'price': '120000', 'timeInForce': 'GTC', 'signature': '***masked***'}
+2026-04-23 21:40:38,871 | INFO | bot.orders | validated_order_request={'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': Decimal('0.001'), 'price': None}
+2026-04-23 21:40:38,871 | INFO | bot.client | binance_request method=POST url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'recvWindow': 10000, 'timestamp': 1776960638871, 'signature': '***masked***'}
+2026-04-23 21:40:39,888 | INFO | bot.client | binance_response status=200 body={'orderId': 13066102391, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'ci8UAHRnWYGhKjMZ7jYC9H', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1776960643539}
+2026-04-23 21:40:39,914 | INFO | bot.client | binance_response status=200 body={'orderId': 13066102393, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'S8bWVxbbOWf376zdsYAUPH', 'price': '120000.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1776960643564}
+2026-04-23 21:40:40,889 | INFO | bot.client | binance_request method=GET url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'orderId': 13066102391, 'recvWindow': 10000, 'timestamp': 1776960640888, 'signature': '***masked***'}
+2026-04-23 21:40:41,636 | INFO | bot.client | binance_response status=200 body={'orderId': 13066102391, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': 'ci8UAHRnWYGhKjMZ7jYC9H', 'price': '0.00', 'avgPrice': '78442.400000', 'origQty': '0.0010', 'executedQty': '0.0010', 'cumQuote': '78.442400', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'time': 1776960643539, 'updateTime': 1776960643539}
+2026-04-23 21:40:41,636 | INFO | bot.orders | refreshed_market_order_response={'orderId': 13066102391, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': 'ci8UAHRnWYGhKjMZ7jYC9H', 'price': '0.00', 'avgPrice': '78442.400000', 'origQty': '0.0010', 'executedQty': '0.0010', 'cumQuote': '78.442400', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'time': 1776960643539, 'updateTime': 1776960643539}
+2026-04-23 21:51:18,525 | INFO | bot.orders | validated_order={'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'LIMIT', 'quantity': Decimal('0.001'), 'price': Decimal('120000')}
+2026-04-23 21:51:18,602 | INFO | bot.client | binance_request method=POST url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.001', 'recvWindow': 10000, 'timestamp': 1776961278599, 'price': '120000', 'timeInForce': 'GTC', 'signature': '***masked***'}
+2026-04-23 21:51:18,664 | INFO | bot.orders | validated_order={'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': Decimal('0.001'), 'price': None}
+2026-04-23 21:51:18,667 | INFO | bot.client | binance_request method=POST url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'recvWindow': 10000, 'timestamp': 1776961278666, 'signature': '***masked***'}
+2026-04-23 21:51:28,666 | ERROR | bot.client | binance_http_error status=400 body={"code":-1021,"msg":"Timestamp for this request is outside of the recvWindow."}
+2026-04-23 21:51:28,668 | ERROR | root | cli_place_order_failed
+Traceback (most recent call last):
+  File "D:\Primetrade.ai\trading_bot\bot\client.py", line 91, in _signed_request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&recvWindow=10000&timestamp=1776961278666&signature=afd0d5d7f08c4f9629bbb1835a1c101f0a609f35f727f42fa821b677d81c2e2b
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Primetrade.ai\trading_bot\cli.py", line 45, in place_order
+    result = manager.place_order(symbol=symbol, side=side, order_type=order_type, quantity=quantity, price=price)
+  File "D:\Primetrade.ai\trading_bot\bot\orders.py", line 35, in place_order
+    response = self.client.place_order(
+        symbol=order_request.symbol,
+    ...<3 lines>...
+        price=order_request.price,
+    )
+  File "D:\Primetrade.ai\trading_bot\bot\client.py", line 65, in place_order
+    return self._signed_request("POST", "/fapi/v1/order", payload)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Primetrade.ai\trading_bot\bot\client.py", line 95, in _signed_request
+    raise BinanceClientError(f"Binance API error: {error_text}") from exc
+bot.client.BinanceClientError: Binance API error: {"code":-1021,"msg":"Timestamp for this request is outside of the recvWindow."}
+2026-04-23 21:51:28,990 | ERROR | bot.client | binance_http_error status=400 body={"code":-1021,"msg":"Timestamp for this request is outside of the recvWindow."}
+2026-04-23 21:51:28,992 | ERROR | root | cli_place_order_failed
+Traceback (most recent call last):
+  File "D:\Primetrade.ai\trading_bot\bot\client.py", line 91, in _signed_request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.001&recvWindow=10000&timestamp=1776961278599&price=120000&timeInForce=GTC&signature=e99ef28ebbef8c664d5d6cd780fab45f23c5695a339267f99bccf61805094544
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Primetrade.ai\trading_bot\cli.py", line 45, in place_order
+    result = manager.place_order(symbol=symbol, side=side, order_type=order_type, quantity=quantity, price=price)
+  File "D:\Primetrade.ai\trading_bot\bot\orders.py", line 35, in place_order
+    response = self.client.place_order(
+        symbol=order_request.symbol,
+    ...<3 lines>...
+        price=order_request.price,
+    )
+  File "D:\Primetrade.ai\trading_bot\bot\client.py", line 65, in place_order
+    return self._signed_request("POST", "/fapi/v1/order", payload)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Primetrade.ai\trading_bot\bot\client.py", line 95, in _signed_request
+    raise BinanceClientError(f"Binance API error: {error_text}") from exc
+bot.client.BinanceClientError: Binance API error: {"code":-1021,"msg":"Timestamp for this request is outside of the recvWindow."}
+2026-04-23 21:52:40,291 | INFO | bot.orders | validated_order={'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': Decimal('0.001'), 'price': None}
+2026-04-23 21:52:40,411 | INFO | bot.orders | validated_order={'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'LIMIT', 'quantity': Decimal('0.001'), 'price': Decimal('120000')}
+2026-04-23 21:52:45,271 | INFO | bot.client | time_sync offset_ms=3680
+2026-04-23 21:52:45,273 | INFO | bot.client | binance_request method=POST url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'recvWindow': 10000, 'timestamp': 1776961368952, 'signature': '***masked***'}
+2026-04-23 21:52:45,314 | INFO | bot.client | time_sync offset_ms=3683
+2026-04-23 21:52:45,317 | INFO | bot.client | binance_request method=POST url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.001', 'recvWindow': 10000, 'timestamp': 1776961368999, 'price': '120000', 'timeInForce': 'GTC', 'signature': '***masked***'}
+2026-04-23 21:52:45,608 | INFO | bot.client | binance_response status=200 body={'orderId': 13066147980, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': '00oHlMHc3qRFkUeRLceveP', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1776961369290}
+2026-04-23 21:52:45,658 | INFO | bot.client | binance_response status=200 body={'orderId': 13066147985, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'TeDAH4OkkGV0VEo6tLV7Gy', 'price': '120000.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1776961369344}
+2026-04-23 21:52:46,611 | INFO | bot.client | binance_request method=GET url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'orderId': 13066147980, 'recvWindow': 10000, 'timestamp': 1776961370291, 'signature': '***masked***'}
+2026-04-23 21:52:48,594 | INFO | bot.client | binance_response status=200 body={'orderId': 13066147980, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': '00oHlMHc3qRFkUeRLceveP', 'price': '0.00', 'avgPrice': '78410.100000', 'origQty': '0.0010', 'executedQty': '0.0010', 'cumQuote': '78.410100', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'time': 1776961369290, 'updateTime': 1776961369290}
+2026-04-23 21:52:48,596 | INFO | bot.orders | market_order_refresh={'orderId': 13066147980, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': '00oHlMHc3qRFkUeRLceveP', 'price': '0.00', 'avgPrice': '78410.100000', 'origQty': '0.0010', 'executedQty': '0.0010', 'cumQuote': '78.410100', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'time': 1776961369290, 'updateTime': 1776961369290}
+2026-04-23 21:53:12,583 | INFO | bot.orders | validated_order={'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': Decimal('0.001'), 'price': None}
+2026-04-23 21:53:13,402 | INFO | bot.orders | validated_order={'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'LIMIT', 'quantity': Decimal('0.001'), 'price': Decimal('120000')}
+2026-04-23 21:53:18,052 | INFO | bot.client | time_sync offset_ms=3676
+2026-04-23 21:53:18,055 | INFO | bot.client | binance_request method=POST url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'recvWindow': 10000, 'timestamp': 1776961401730, 'signature': '***masked***'}
+2026-04-23 21:53:18,696 | INFO | bot.client | binance_response status=200 body={'orderId': 13066150098, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'SulxGqFqFFRzbSKlCoVORb', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1776961402378}
+2026-04-23 21:53:19,700 | INFO | bot.client | binance_request method=GET url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'orderId': 13066150098, 'recvWindow': 10000, 'timestamp': 1776961403375, 'signature': '***masked***'}
+2026-04-23 21:53:19,874 | INFO | bot.client | binance_response status=200 body={'orderId': 13066150098, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': 'SulxGqFqFFRzbSKlCoVORb', 'price': '0.00', 'avgPrice': '78431.900000', 'origQty': '0.0010', 'executedQty': '0.0010', 'cumQuote': '78.431900', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'time': 1776961402378, 'updateTime': 1776961402378}
+2026-04-23 21:53:19,875 | INFO | bot.orders | market_order_refresh={'orderId': 13066150098, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': 'SulxGqFqFFRzbSKlCoVORb', 'price': '0.00', 'avgPrice': '78431.900000', 'origQty': '0.0010', 'executedQty': '0.0010', 'cumQuote': '78.431900', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'time': 1776961402378, 'updateTime': 1776961402378}
+2026-04-23 21:53:22,695 | INFO | bot.client | time_sync offset_ms=3675
+2026-04-23 21:53:22,697 | INFO | bot.client | binance_request method=POST url=https://testnet.binancefuture.com/fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.001', 'recvWindow': 10000, 'timestamp': 1776961406371, 'price': '120000', 'timeInForce': 'GTC', 'signature': '***masked***'}
+2026-04-23 21:53:22,867 | INFO | bot.client | binance_response status=200 body={'orderId': 13066150368, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'yGxgjtNUy8yAPyxUpaFQUi', 'price': '120000.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1776961406544}
